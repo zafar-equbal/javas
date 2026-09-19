@@ -14,27 +14,49 @@
 // ● 2 → 2 times
 // ● 3 → 1 time
 
+// package Hashmap;
+
+// import java.util.HashMap;
+// import java.util.Map;
+
+// public class FreqCount {
+
+//     public static void main(String[] args) {
+
+//         String text ="programming";
+
+//         Map<Character,Integer> freqMap=new HashMap<>();
+
+//         for(char ch : text.toCharArray()) {
+//             freqMap.put(ch, freqMap.getOrDefault(ch, 0)+1);
+//         }
+
+//         for (Map.Entry<Character,Integer> entry : freqMap.entrySet()){
+//             System.out.println("'"+entry.getKey() + "' appears " +entry.getValue()+ " times");
+//         }
+        
+//     }
+    
+// }
+
 package Hashmap;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class FreqCount {
-
+public class FreqCount{
     public static void main(String[] args) {
+        int [] arr ={10,20,30,40,50,20,50,30,50,20};
+        int n =arr.length;
 
-        String text ="programming";
+        HashMap<Integer, Integer> freq =new HashMap<>();
 
-        Map<Character,Integer> freqMap=new HashMap<>();
-
-        for(char ch : text.toCharArray()) {
-            freqMap.put(ch, freqMap.getOrDefault(ch, 0)+1);
+        for(int i=0;i< n;i++){
+            freq.put(arr[i], freq.getOrDefault(arr[i],0)+1);
         }
 
-        for (Map.Entry<Character,Integer> entry : freqMap.entrySet()){
-            System.out.println("'"+entry.getKey() + "' appears " +entry.getValue()+ " times");
+        for(Map.Entry<Integer, Integer> it : freq.entrySet()) {
+            System.out.println(it.getKey() +" occurs "+it.getValue() + " times");
         }
-        
     }
-    
 }
