@@ -47,10 +47,22 @@ public class SingleElementInArray {
         return -1;
     }
 
+    // Approach 4: XOR Trick (Optimal)
+
+    static int getSingleElementXOR(int [] arr ){
+        int n = arr.length;
+
+        int xorr=0;
+        for(int i=0;i<n;i++){
+            xorr=xorr^arr[i];
+        }
+        return xorr;
+    }
+
 
     public static void main(String[] args) {
         int [] arr ={5,1,2,1,2};
-        int ans =getSingleElementOptimal(arr);
+        int ans =getSingleElementXOR(arr);
         System.out.println(ans);
     }
     
