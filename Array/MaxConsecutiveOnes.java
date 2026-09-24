@@ -4,6 +4,8 @@
 package Array;
 
 public class MaxConsecutiveOnes {
+
+    
     static int findMaxConsecutiveOnes(int [] nums){
         int count=0;
         int maxi=0;

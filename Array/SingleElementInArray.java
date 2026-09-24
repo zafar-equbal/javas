@@ -2,7 +2,12 @@
 
 package Array;
 
+import java.util.HashMap;
+
 public class SingleElementInArray {
+
+    //Approach 1: Brute Force (Double Loop)
+
 
     static int getSingleElement (int [] arr){
         int n=arr.length;
@@ -23,9 +28,29 @@ public class SingleElementInArray {
 
     }
 
+    // Approach 2: Hashing / Frequency Array
+
+    static int getSingleElementOptimal(int [] arr){
+        int n= arr.length;
+
+        int maxi =arr[0];
+        for(int i=0;i<n;i++){
+            maxi=Math.max(maxi,arr[i]);
+        }
+        int [] hash =new int[maxi +1];
+        for(int i=0;i<n;i++){
+            hash[arr[i]]++;
+        }
+        for(int i=0;i<n;i++){
+            if(hash[arr[i]]==1) return arr[i];
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
-        int [] arr ={4,1,2,1,2};
-        int ans =getSingleElement(arr);
+        int [] arr ={5,1,2,1,2};
+        int ans =getSingleElementOptimal(arr);
         System.out.println(ans);
     }
     
